@@ -8,10 +8,17 @@ terraform {
 }
 provider "aws" {
 
-  region = "ap-south-1"
+  region = var.aws_region
 }
 
 resource "aws_s3_bucket" "product_assets" {
-  bucket = "ecommerce-dev-product-assets-sunita"
+  bucket = "${var.project_name}-${var.environment}-product-assets-sunita-01"
+
+  tags = {
+    Environemnt = var.environment
+    purpose     = "product_asset"
+
+
+  }
 
 }
