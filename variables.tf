@@ -7,3 +7,7 @@ variable "environment" {
     error_message = "Environment must be one of: dev, qa, prod."
   }
 }
+variable "aws_region" {
+  type    = string
+  default = "ap-south-1"
+}
