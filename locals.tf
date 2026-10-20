@@ -1,3 +1,8 @@
 locals {
-  bucket_name = "ecommerce-${var.environment}-product-assetssunita"
+  storage_requirements = {
+    assets = "product-assets"
+    logs   = "application-logs"
+    backup = "backup"
+  }
+  versioning_enabled = var.environment == "prod" ? true : false
 }
